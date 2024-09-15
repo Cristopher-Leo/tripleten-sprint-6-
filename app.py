@@ -5,9 +5,13 @@ import plotly.express as px
 
 data = pd.read_csv('./vehicles_us.csv')
 data.fillna(0, inplace = True)
-hist_button = st.button('Construir histograma') 
 st.header('Creacion de graficos')
-       
+hist_button = st.button('Construir histograma') 
+build_histogram = st.checkbox('Construir un histograma')
+
+if build_histogram: 
+   
+    st.write('Construir un histograma para la columna odómetro')       
 if hist_button:
     
 
@@ -16,11 +20,11 @@ if hist_button:
     fig = px.histogram(data , x="odometer")
 
     st.plotly_chart(fig)
-build_histogram = st.checkbox('Construir un histograma')
+build_scatter = st.checkbox('Construir un grafico de dispersion')
 
-if build_histogram: 
+if build_scatter: 
    
-    st.write('Construir un histograma para la columna odómetro')
+    st.write('Construir un grafico de dispersion')
 
 scatter_button = st.button('construir grafico de dispersion')
 if scatter_button: 
