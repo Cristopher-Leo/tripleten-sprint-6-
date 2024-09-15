@@ -11,7 +11,7 @@ build_histogram = st.checkbox('Construir un histograma')
 
 if build_histogram: 
    
-    st.write('Construir un histograma para la columna odómetro')       
+    st.write(hist_button)       
 if hist_button:
     
 
